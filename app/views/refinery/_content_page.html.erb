@@ -1,0 +1,9 @@
+<%= render_content_page(@page, {
+      :hide_sections => [:side_body, :body_content_title],
+      :can_use_fallback => !local_assigns[:show_empty_sections] && !local_assigns[:remove_automatic_sections]
+    }) %>
+    
+<%= content_for :sidebar do %><%=raw @page.content_for(:side_body) %><% end %>
+
+    
+<%= render '/refinery/draft_page_message' unless @page.nil? or @page.live? -%>

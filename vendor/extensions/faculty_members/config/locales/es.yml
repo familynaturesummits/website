@@ -1,0 +1,57 @@
+es:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: Crear nuevo expertise area
+            reorder: Reordenar expertise areas
+            reorder_done: Reordenación de expertise areas completada
+          records:
+            title: Expertise Areas
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay expertise areas todavía. Pulsa en "Crear nuevo Expertise
+              Area" para crear tu primer expertise area.
+          expertise_area:
+            view_live_html: Ver este expertise area como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este expertise area
+            delete: Borrar este expertise area para siempre
+        faculty_members:
+          actions:
+            create_new: Crear nuevo faculty member
+            reorder: Reordenar faculty members
+            reorder_done: Reordenación de faculty members completada
+          records:
+            title: Faculty Members
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay faculty members todavía. Pulsa en "Crear nuevo Faculty
+              Member" para crear tu primer faculty member.
+          faculty_member:
+            view_live_html: Ver este faculty member como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este faculty member
+            delete: Borrar este faculty member para siempre
+      expertise_areas:
+        show:
+          other: Otros expertise areas
+      faculty_members:
+        show:
+          other: Otros faculty members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

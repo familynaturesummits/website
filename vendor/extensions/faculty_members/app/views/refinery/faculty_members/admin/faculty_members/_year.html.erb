@@ -1,0 +1,10 @@
+<li style="display:inline-block">
+
+<%= f.check_box :select_year %>
+<%= f.hidden_field :year, :value => year.to_s %>
+<%#= check_box_tag 'faculty_member[expertise_area_ids][]', area.id,
+                             @faculty_member.expertise_areas.include?(area),
+                             :id => (id="post_category_ids_#{area.id}") %>
+           <label class="stripped"><%= year %></label>
+           
+</li>           

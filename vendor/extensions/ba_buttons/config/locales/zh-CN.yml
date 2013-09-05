@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: 建立新的 Ba Button
+            reorder: 对 Ba Buttons 重新排序
+            reorder_done: 对 Ba Buttons 的重新排序结束
+          records:
+            title: Ba Buttons
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Ba Buttons yet. Click "Add New Ba Button" to add your first ba button.
+            no_items_yet: 目前没有 Ba Buttons . 点击 "Add New Ba Button" 创建一个ba button.
+          ba_button:
+            view_live_html: 查看 ba button 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 ba button
+            delete: 永久删除 ba button
+      ba_buttons:
+        show:
+          other: 其他 Ba Buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

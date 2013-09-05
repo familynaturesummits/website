@@ -1,0 +1,29 @@
+<% content_for :body do %>
+
+    <% if params[:area_of_expertise].present? %>
+        <p>in subject matter/program.... <strong><%= ::Refinery::FacultyMembers::ExpertiseArea.find(params[:area_of_expertise]).name %></strong></p>
+    <% end %>
+    
+    <% if params[:first_name].present? %>
+        <p>with first name of.... <strong><%= params[:first_name] %></strong></p>
+    <% end %>
+    
+    <% if params[:last_name].present? %>
+        <p>with last name of.... <strong><%= params[:last_name] %></strong></p>
+    <% end %>
+
+    <br>
+  <table id="faculty_members" class="table">
+    <% @faculty_members.each do |faculty_member| %>
+      <tr>
+          <td><%= image_fu faculty_member.picture, '50x50<' if faculty_member.picture.present? %></td>
+          <td><%= link_to faculty_member.full_name, refinery.faculty_members_faculty_member_path(faculty_member) %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+
+<% content_for(:sidebar) do %><%= render 'search' %><% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,58 @@
+nl:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: Maak een nieuwe Expertise Area
+            reorder: Wijzig de volgorde van de Expertise Areas
+            reorder_done: Klaar met het wijzingen van de volgorde van de Expertise
+              Areas
+          records:
+            title: Expertise Areas
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Expertise Areas. Druk op 'Maak een nieuwe
+              Expertise Area' om de eerste aan te maken.
+          expertise_area:
+            view_live_html: Bekijk deze expertise area op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze expertise area
+            delete: Verwijder deze expertise area voor eeuwig
+        faculty_members:
+          actions:
+            create_new: Maak een nieuwe Faculty Member
+            reorder: Wijzig de volgorde van de Faculty Members
+            reorder_done: Klaar met het wijzingen van de volgorde van de Faculty Members
+          records:
+            title: Faculty Members
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Faculty Members. Druk op 'Maak een nieuwe
+              Faculty Member' om de eerste aan te maken.
+          faculty_member:
+            view_live_html: Bekijk deze faculty member op de website <br/><em>(opent
+              een nieuw venster)</em>
+            edit: Bewerk deze faculty member
+            delete: Verwijder deze faculty member voor eeuwig
+      expertise_areas:
+        show:
+          other: Andere Expertise Areas
+      faculty_members:
+        show:
+          other: Andere Faculty Members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

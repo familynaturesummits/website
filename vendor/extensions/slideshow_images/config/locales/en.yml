@@ -1,0 +1,31 @@
+en:
+  refinery:
+    plugins:
+      slideshow_images:
+        title: Slideshow Images
+    slideshow_images:
+      admin:
+        slideshow_images:
+          actions:
+            create_new: Add New Slideshow Image
+            reorder: Reorder Slideshow Images
+            reorder_done: Done Reordering Slideshow Images
+          records:
+            title: Slideshow Images
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Slideshow Images yet. Click "Add New Slideshow Image" to add your first slideshow image.
+          slideshow_image:
+            view_live_html: View this slideshow image live <br/><em>(opens in a new window)</em>
+            edit: Edit this slideshow image
+            delete: Remove this slideshow image forever
+      slideshow_images:
+        show:
+          other: Other Slideshow Images
+  activerecord:
+    attributes:
+      'refinery/slideshow_images/slideshow_image':
+        header: Header
+        caption: Caption
+        image: Image
+        active: Active
+        position: Position

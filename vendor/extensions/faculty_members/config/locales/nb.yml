@@ -1,0 +1,57 @@
+nb:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: Lag en ny Expertise Area
+            reorder: Endre rekkefølgen på Expertise Areas
+            reorder_done: Ferdig å endre rekkefølgen Expertise Areas
+          records:
+            title: Expertise Areas
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Expertise Areas enda. Klikk på "Lag en ny Expertise
+              Area" for å legge til din første expertise area.
+          expertise_area:
+            view_live_html: Vis hvordan denne expertise area ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne expertise area
+            delete: Fjern denne expertise area permanent
+        faculty_members:
+          actions:
+            create_new: Lag en ny Faculty Member
+            reorder: Endre rekkefølgen på Faculty Members
+            reorder_done: Ferdig å endre rekkefølgen Faculty Members
+          records:
+            title: Faculty Members
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Faculty Members enda. Klikk på "Lag en ny Faculty
+              Member" for å legge til din første faculty member.
+          faculty_member:
+            view_live_html: Vis hvordan denne faculty member ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne faculty member
+            delete: Fjern denne faculty member permanent
+      expertise_areas:
+        show:
+          other: Andre Expertise Areas
+      faculty_members:
+        show:
+          other: Andre Faculty Members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

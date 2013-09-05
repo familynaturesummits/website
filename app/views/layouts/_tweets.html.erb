@@ -1,0 +1,7 @@
+<h2>Latest Tweets</h2>
+<% fns_tweets = Twitter.user_timeline("familysummits", :count => 3) %>
+<ul id="tweets">
+<% fns_tweets.each do |tweet| %>
+    <li><%= content_tag :em, tweet.created_at.strftime('%B %d, %Y') %><br><%= auto_link(tweet.text).html_safe %></li>
+<% end %>
+</ul>

@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+#        article: masculino/femenino
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: Crear nuevo ba button
+            reorder: Reordenar ba buttons
+            reorder_done: Reordenación de ba buttons completada
+          records:
+            title: Ba Buttons
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay ba buttons todavía. Pulsa en "Crear nuevo Ba Button" para crear tu primer ba button.
+          ba_button:
+            view_live_html: Ver este ba button como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este ba button
+            delete: Borrar este ba button para siempre
+      ba_buttons:
+        show:
+          other: Otros ba buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

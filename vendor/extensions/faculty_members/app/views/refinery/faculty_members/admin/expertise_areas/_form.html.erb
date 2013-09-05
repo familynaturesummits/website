@@ -1,0 +1,17 @@
+<%= form_for [refinery, :faculty_members_admin, @expertise_area] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @expertise_area,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.expertise_areas.admin.expertise_areas.expertise_area'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @expertise_area.name) %>
+<% end -%>

@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: Add New Ba Button
+            reorder: Reorder Ba Buttons
+            reorder_done: Done Reordering Ba Buttons
+          records:
+            title: Ba Buttons
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Ba Buttons yet. Click "Add New Ba Button" to add your first ba button.
+          ba_button:
+            view_live_html: View this ba button live <br/><em>(opens in a new window)</em>
+            edit: Edit this ba button
+            delete: Remove this ba button forever
+      ba_buttons:
+        show:
+          other: Other Ba Buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

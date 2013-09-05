@@ -1,0 +1,123 @@
+<%= form_for [refinery, :faculty_members_admin, @faculty_member] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @faculty_member,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :first_name -%>
+    <%= f.text_field :first_name, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :last_name -%>
+    <%= f.text_field :last_name  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :expertise_areas -%>
+    
+    <ul class='blog_categories'>
+            <%= hidden_field_tag 'faculty_member[expertise_area_ids][]', '' %>
+            <% ::Refinery::FacultyMembers::ExpertiseArea.order(:name).each do |area| %>
+              <li>
+                 <%= check_box_tag 'faculty_member[expertise_area_ids][]', area.id,
+                                   @faculty_member.expertise_areas.include?(area),
+                                   :id => (id="post_category_ids_#{area.id}") %>
+                 <%= label_tag 'faculty_member[expertise_area_ids][]', area.name,
+                               :class => 'stripped',
+                               :for => id %>
+              </li>
+            <% end %>
+    </ul>
+
+  </div>
+  
+  <div class='field'>
+      <%= f.label :faculty_member_years, "Years" -%>
+      
+      <ul class='blog_categories'>
+              <% end_date = Date.today.strftime('%Y').to_i %>
+                <% (1970..end_date).each do |year| %>
+                <% has_year = @faculty_member.faculty_member_years.where(:year => year.to_s) %>
+                    <% if has_year.present? %>
+                        <%= f.fields_for :faculty_member_years, has_year do |nested| %>
+                            <%= render 'year', :f => nested, :year => year %>
+                        <% end %>
+                    <% else %>
+                        <%= f.fields_for :faculty_member_years, @faculty_member.faculty_member_years.build do |nested| %>
+                            <%= render 'year', :f => nested, :year => year %>
+                        <% end %>
+                    <% end %>
+              <% end %>
+      </ul>
+      
+  </div>      
+  
+  <div class='field'>
+    <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
+      <ul id='page_parts'>
+        <% [:description].each_with_index do |part, part_index| %>
+          <li class='ui-state-default<%= ' ui-state-active' if part_index == 0 %>'>
+            <%= link_to t("#{part}", :scope => "activerecord.attributes.refinery/faculty_members/faculty_member", :default => part.to_s.titleize), "##{part}" %>
+          </li>
+        <% end %>
+      </ul>
+      <div id='page_part_editors'>
+        <% [:description].each do |part| %>
+          <div class='page_part' id='<%= part %>'>
+            <%= f.text_area part, :rows => 20, :class => 'wymeditor widest' -%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+  
+  
+  
+  <div class='field'>
+    <%= f.label :email -%>
+    <%= f.text_field :email  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :url -%>
+    <%= f.text_field :url  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :picture -%>
+    <%= render '/refinery/admin/image_picker',
+               :f => f,
+               :field => :picture_id,
+               :image => @faculty_member.picture,
+               :toggle_image_display => false %>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :vcard -%>
+    <%= render '/refinery/admin/resource_picker',
+               :f => f,
+               :field => :vcard_id,
+               :resource => @faculty_member.vcard %>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.faculty_members.admin.faculty_members.faculty_member'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @faculty_member.first_name) %>
+<% end -%>
+<% content_for :javascripts do %>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end %>

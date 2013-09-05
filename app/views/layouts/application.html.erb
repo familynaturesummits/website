@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<%= render '/refinery/html_tag' %>
+  <% site_bar = render('/refinery/site_bar', :head => true) -%>
+  <%= render '/refinery/head' %>
+  
+  <body>
+    <%#= site_bar -%>
+    <%= render '/refinery/ie6check' if request.env['HTTP_USER_AGENT'] =~ /MSIE/ -%>
+
+      <header id="header">
+        <%= render '/refinery/header' -%>
+      </header>
+      
+      <%= render '/layouts/hero' if home_page? %>
+      
+      <section id="page">
+        <div class="container">
+            <%= render '/layouts/breadcrumb' %>
+          <div class="row">
+            <div class="span3">
+              <%= render '/layouts/sidebar' %>
+            </div>  
+            <div class="span9">
+
+                <% if content_for(:sidebar).blank? %>
+                    <%= content_tag :h1, content_for(:body_content_title).blank? ? @page.title : yield(:body_content_title) unless @page.home? %>
+                    <%= yield %> 
+                <% else %>
+                    <div class="row">
+                    <div class="span5">
+                        <%= content_tag :h1, content_for(:body_content_title).blank? ? @page.title : yield(:body_content_title) unless @page.home? %>
+                      <%= yield %>
+                    </div>
+                    <div class="span4" id="sidebar">
+                      <div class="inner"><%= yield :sidebar %></div>
+                    </div>
+                    </div>
+                <% end %>
+                
+            </div>           
+          </div>
+          <%= render '/layouts/breadcrumb' %>
+        </div>
+      </section>
+      
+      <footer>
+        <div class="container">
+        <%= render '/refinery/footer' -%>
+        </div>
+      </footer>
+
+    <%= render '/refinery/javascripts' %>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: Lag en ny Ba Button
+            reorder: Endre rekkefølgen på Ba Buttons
+            reorder_done: Ferdig å endre rekkefølgen Ba Buttons
+          records:
+            title: Ba Buttons
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Ba Buttons enda. Klikk på "Lag en ny Ba Button" for å legge til din første ba button.
+          ba_button:
+            view_live_html: Vis hvordan denne ba button ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne ba button
+            delete: Fjern denne ba button permanent
+      ba_buttons:
+        show:
+          other: Andre Ba Buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

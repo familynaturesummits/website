@@ -1,0 +1,32 @@
+<div class="container">
+    
+    <h1 id='logo'>
+      <%= link_to image_tag('/assets/logo-new.png'), refinery.root_path %>
+    </h1>
+    
+    <ul class="nav nav-pills pull-right" style="margin-bottom:0;">
+        <%= content_tag :li, link_to("Home", refinery.root_url) %>
+        <%= content_tag :li, link_to("Register", "/next-summit") %>
+        <li>
+            <a href="javascript:void(0)" onClick="$('#paypal_form').submit();return false;">Donate</a>
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal_form">
+            <input type="hidden" name="cmd" value="_s-xclick">
+            <input type="hidden" name="hosted_button_id" value="USBEJVV5LZ4FA">            
+            </form>         
+        </li>    
+    </ul>    
+
+
+<ul id="social-links" style="clear:right;">
+    <%= content_tag :li, link_to(image_tag('/assets/facebook_32.png'), "https://www.facebook.com/pages/Family-Nature-Summits/166644496769729", :target => "new") %>
+    <%= content_tag :li, link_to(image_tag('/assets/twitter_32.png'), "https://twitter.com/familysummits", :target => "new") %>
+    <%= content_tag :li, link_to(image_tag('/assets/wiki_icon_32.png'), "http://en.wikipedia.org/wiki/Family_Nature_Summit", :target => "new") %>
+    <%#= content_tag :li, link_to(image_tag('/assets/rss_32.png'), "#") %>
+</ul>    
+    
+</div>
+
+<%= render(:partial => "/refinery/menu", :locals => {
+             :dom_id => 'menu',
+             :css => 'menu'
+           }) %>

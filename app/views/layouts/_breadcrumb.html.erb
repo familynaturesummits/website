@@ -1,0 +1,8 @@
+<% unless @page.home? %>
+        <ul class="bread-crumb">
+                <li><%= link_to "Home", refinery.root_path %> &#187; </li>
+                <% [@page.ancestors, @page].flatten.collect do |p| %>
+                        <li><%= link_to p.title, refinery.url_for(p.url) %> <%= raw("&#187;") unless p.id == @page.id  %></li>
+                <% end %>
+        </ul>
+<% end %>

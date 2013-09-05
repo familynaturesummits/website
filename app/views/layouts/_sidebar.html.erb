@@ -1,0 +1,26 @@
+<% unless @page.home? %>
+<!-- 
+<h2>Top Pages</h2>
+<ul class="nav nav-list">
+    <% Refinery::Page.where(:featured => true).each do |featured| %>
+        <%= content_tag :li, link_to(featured.title, refinery.url_for(featured.url)) %>
+    <% end %>    
+</ul>
+
+<br>
+-->
+
+<iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FFamily-Nature-Summits%2F166644496769729&amp;width=270&amp;height=395&amp;show_faces=false&amp;colorscheme=light&amp;stream=true&amp;border_color=%23907136&amp;header=false&amp;appId=247512194392" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:370px;" allowTransparency="true"></iframe>
+
+<br><br>
+
+<% end %>
+
+<%#= render '/layouts/tweets' %>
+
+<br>
+
+<div align="center"> 
+    
+</div>
+

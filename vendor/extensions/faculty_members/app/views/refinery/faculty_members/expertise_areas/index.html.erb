@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="expertise_areas">
+    <% @expertise_areas.each do |expertise_area| %>
+      <li>
+        <%= link_to expertise_area.name, refinery.faculty_members_expertise_area_path(expertise_area) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

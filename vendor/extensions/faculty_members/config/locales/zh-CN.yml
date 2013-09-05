@@ -1,0 +1,55 @@
+zh-CN:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: 建立新的 Expertise Area
+            reorder: 对 Expertise Areas 重新排序
+            reorder_done: 对 Expertise Areas 的重新排序结束
+          records:
+            title: Expertise Areas
+            sorry_no_results: 对不起，未找到结果。
+            no_items_yet: 目前没有 Expertise Areas . 点击 "Add New Expertise Area" 创建一个expertise
+              area.
+          expertise_area:
+            view_live_html: 查看 expertise area 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 expertise area
+            delete: 永久删除 expertise area
+        faculty_members:
+          actions:
+            create_new: 建立新的 Faculty Member
+            reorder: 对 Faculty Members 重新排序
+            reorder_done: 对 Faculty Members 的重新排序结束
+          records:
+            title: Faculty Members
+            sorry_no_results: 对不起，未找到结果。
+            no_items_yet: 目前没有 Faculty Members . 点击 "Add New Faculty Member" 创建一个faculty
+              member.
+          faculty_member:
+            view_live_html: 查看 faculty member 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 faculty member
+            delete: 永久删除 faculty member
+      expertise_areas:
+        show:
+          other: 其他 Expertise Areas
+      faculty_members:
+        show:
+          other: 其他 Faculty Members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

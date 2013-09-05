@@ -1,0 +1,65 @@
+<% content_for :body_content_title do %>
+  <%= @faculty_member.full_name %>
+<% end %>
+
+<% content_for(:sidebar) do %><%= render 'search' %><% end %>
+
+<% content_for :body do %>
+
+  <section>
+    <%= image_fu @faculty_member.picture, '400x600<' if @faculty_member.picture.present? %>
+
+  </section>
+  <section>
+      
+    <dl>
+        <dt>Subject matter/program</dt>
+        <dd><%= @faculty_member.expertise_areas.collect{ |a| link_to(a.name, refinery.faculty_members_faculty_members_path(:area_of_expertise => a.id)) }.join(', ').html_safe %></dd>
+        <dt>Years on faculty</dt>
+        <dd><%= @faculty_member.faculty_member_years.collect{ |y| link_to(y.year, refinery.faculty_members_faculty_members_path(:year => y.year)) }.join(', ').html_safe %></dd>
+        
+        <dt>Bio</dt>
+        <dd><%= @faculty_member.description.html_safe %></dd>
+        
+        <% unless @faculty_member.email.blank? %>
+            <dt>Email</dt>
+            <dd><%= link_to @faculty_member.email, "mailto:#{@faculty_member.email}"%></dd>
+        <% end %>    
+        
+        <% unless @faculty_member.url.blank? %>
+            <dt>Website</dt>
+            <dd><% 
+            if @faculty_member.url.include?('http://') || @faculty_member.url.include?('https://') 
+                url = @faculty_member.url 
+            else
+                url = "http://#{@faculty_member.url}"
+            end
+            %>
+                
+                
+            <%= link_to @faculty_member.url, url, :target => "_blank" %></dd>
+        <% end %>
+        
+        <% if @faculty_member.vcard.present? %>
+            <dt>vCard</dt>
+            <dd><%= link_to 'vcard', @faculty_member.vcard.url %></dd>
+        <% end %>
+    </dl>      
+      
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="faculty_members">
+      <% @faculty_members.each do |faculty_member| %>
+        <li>
+          <%= link_to faculty_member.first_name, refinery.faculty_members_faculty_member_path(faculty_member) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

@@ -1,0 +1,33 @@
+zh-CN:
+  refinery:
+    plugins:
+      slideshow_images:
+        title: Slideshow Images
+    slideshow_images:
+      admin:
+        slideshow_images:
+          actions:
+            create_new: 建立新的 Slideshow Image
+            reorder: 对 Slideshow Images 重新排序
+            reorder_done: 对 Slideshow Images 的重新排序结束
+          records:
+            title: Slideshow Images
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Slideshow Images yet. Click "Add New Slideshow Image" to add your first slideshow image.
+            no_items_yet: 目前没有 Slideshow Images . 点击 "Add New Slideshow Image" 创建一个slideshow image.
+          slideshow_image:
+            view_live_html: 查看 slideshow image 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 slideshow image
+            delete: 永久删除 slideshow image
+      slideshow_images:
+        show:
+          other: 其他 Slideshow Images
+  activerecord:
+    attributes:
+      'refinery/slideshow_images/slideshow_image':
+        header: Header
+        caption: Caption
+        image: Image
+        active: Active
+        position: Position

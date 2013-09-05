@@ -1,0 +1,38 @@
+<div class="container" id="hero">
+          <div class="row">
+              <div class="span3">
+                  <span id="left_title"><i class="icon-map-marker"></i> Start Your Adventure Here!</span>
+                  <ul id="block-links">
+                      <% Refinery::BaButtons::BaButton.order(:position).limit(3).each do |button| %>
+                        <%= content_tag :li, link_to(button.title, button.url, :style => button.title.length > 17 ? "line-height:35px;" : nil), :class => "#{button.color}-gradient" %>
+                      <% end %>
+                      <%#= content_tag :li, link_to("What is a Summit?", "/summits/what-is-a-summit"), :class => "red-gradient" %>
+                      <%#= content_tag :li, link_to("Summit 2014", "/next-summit"), :class => "brown-gradient" %>
+                      <%#= content_tag :li, link_to("Things You Need to Know for 2014", "/next-summit/things-to-know-for-2014-summit", :style => "line-height:35px;"), :class => "yellow-gradient" %>
+                  </ul>      
+              </div>  
+              <div class="span9">
+                  <div id="home-carousel" class="carousel slide">
+                  <!-- Carousel items -->
+                  <div class="carousel-inner">
+                    <% Refinery::SlideshowImages::SlideshowImage.where(:active => true).order(:position).each_with_index do |slide, index| %>
+                        <div class="item<%= ' active' if index == 0 %>">
+                            <%= image_fu slide.image, '700x' %>
+                            <%#= image_tag slide.image.url %>
+                            <div class="carousel-caption">
+                                <%= content_tag :h4, slide.header %>
+                                <%= raw slide.caption %>
+                            </div>
+                        </div>
+                    <% end %>
+
+                  </div>
+                  <!-- Carousel nav  -->
+                  <a class="carousel-control left" href="#home-carousel" data-slide="prev">&lsaquo;</a>
+                  <a class="carousel-control right" href="#home-carousel" data-slide="next">&rsaquo;</a>
+                 
+                  </div>
+                  
+              </div>  
+          </div>
+</div>  

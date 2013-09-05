@@ -1,0 +1,59 @@
+fr:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Expertise Area
+            reorder: Réordonner les Expertise Areas
+            reorder_done: Fin de réordonnancement des Expertise Areas
+          records:
+            title: Expertise Areas
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Expertise Area. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Expertise Area" pour créer votre premi(er/ère)
+              expertise area.
+          expertise_area:
+            view_live_html: Voir ce(t/tte) expertise area <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) expertise area
+            delete: Supprimer définitivement ce(t/tte) expertise area
+        faculty_members:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Faculty Member
+            reorder: Réordonner les Faculty Members
+            reorder_done: Fin de réordonnancement des Faculty Members
+          records:
+            title: Faculty Members
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Faculty Member. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Faculty Member" pour créer votre premi(er/ère)
+              faculty member.
+          faculty_member:
+            view_live_html: Voir ce(t/tte) faculty member <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) faculty member
+            delete: Supprimer définitivement ce(t/tte) faculty member
+      expertise_areas:
+        show:
+          other: Autres Expertise Areas
+      faculty_members:
+        show:
+          other: Autres Faculty Members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

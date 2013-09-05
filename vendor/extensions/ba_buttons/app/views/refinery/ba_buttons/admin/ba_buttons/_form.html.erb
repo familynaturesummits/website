@@ -1,0 +1,29 @@
+<%= form_for [refinery, :ba_buttons_admin, @ba_button] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @ba_button,
+              :include_object_name => true %>
+
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest'  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :url -%>
+    <%= f.text_field :url  -%>
+
+  </div>
+  
+  <div class='field'>
+    <%= f.label :color -%>
+    <%= f.select :color, options_for_select( [ 'red', 'orange', 'yellow' ], :selected => @ba_button.color)  -%>
+
+  </div>
+  
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.ba_buttons.admin.ba_buttons.ba_button'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @ba_button.title) %>
+<% end -%>

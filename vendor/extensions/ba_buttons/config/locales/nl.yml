@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: Maak een nieuwe Ba Button
+            reorder: Wijzig de volgorde van de Ba Buttons
+            reorder_done: Klaar met het wijzingen van de volgorde van de Ba Buttons
+          records:
+            title: Ba Buttons
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Ba Buttons. Druk op 'Maak een nieuwe Ba Button' om de eerste aan te maken.
+          ba_button:
+            view_live_html: Bekijk deze ba button op de website <br/><em>(opent een nieuw venster)</em>
+            edit: Bewerk deze ba button
+            delete: Verwijder deze ba button voor eeuwig
+      ba_buttons:
+        show:
+          other: Andere Ba Buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

@@ -1,0 +1,57 @@
+sk:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: Pridať Expertise Area
+            reorder: Preusporiadať Expertise Areas
+            reorder_done: Koniec radenia Expertise Areas
+          records:
+            title: Expertise Areas
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Expertise Areas. Kliknite na "Pridať
+              Expertise Area" pre pridanie prvého expertise area.
+          expertise_area:
+            view_live_html: Zobraziť náhľad expertise area<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť expertise area
+            delete: Zmazať expertise area
+        faculty_members:
+          actions:
+            create_new: Pridať Faculty Member
+            reorder: Preusporiadať Faculty Members
+            reorder_done: Koniec radenia Faculty Members
+          records:
+            title: Faculty Members
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Faculty Members. Kliknite na "Pridať
+              Faculty Member" pre pridanie prvého faculty member.
+          faculty_member:
+            view_live_html: Zobraziť náhľad faculty member<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť faculty member
+            delete: Zmazať faculty member
+      expertise_areas:
+        show:
+          other: Daľšie Expertise Areas
+      faculty_members:
+        show:
+          other: Daľšie Faculty Members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

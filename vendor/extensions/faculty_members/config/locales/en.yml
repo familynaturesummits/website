@@ -1,0 +1,57 @@
+en:
+  refinery:
+    plugins:
+      expertise_areas:
+        title: Expertise Areas
+      faculty_members:
+        title: Faculty Members
+    faculty_members:
+      admin:
+        expertise_areas:
+          actions:
+            create_new: Add New Expertise Area
+            reorder: Reorder Expertise Areas
+            reorder_done: Done Reordering Expertise Areas
+          records:
+            title: Expertise Areas
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Expertise Areas yet. Click "Add New Expertise
+              Area" to add your first expertise area.
+          expertise_area:
+            view_live_html: View this expertise area live <br/><em>(opens in a new
+              window)</em>
+            edit: Edit this expertise area
+            delete: Remove this expertise area forever
+        faculty_members:
+          actions:
+            create_new: Add New Faculty Member
+            reorder: Reorder Faculty Members
+            reorder_done: Done Reordering Faculty Members
+          records:
+            title: Faculty Members
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Faculty Members yet. Click "Add New Faculty
+              Member" to add your first faculty member.
+          faculty_member:
+            view_live_html: View this faculty member live <br/><em>(opens in a new
+              window)</em>
+            edit: Edit this faculty member
+            delete: Remove this faculty member forever
+      expertise_areas:
+        show:
+          other: Other Expertise Areas
+      faculty_members:
+        show:
+          other: Other Faculty Members
+  activerecord:
+    attributes:
+      refinery/faculty_members/expertise_area:
+        name: Name
+      refinery/faculty_members/faculty_member:
+        first_name: First Name
+        last_name: Last Name
+        description: Description
+        email: Email
+        url: Url
+        picture: Picture
+        vcard: Vcard

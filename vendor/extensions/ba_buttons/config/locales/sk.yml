@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: Pridať Ba Button
+            reorder: Preusporiadať Ba Buttons
+            reorder_done: Koniec radenia Ba Buttons
+          records:
+            title: Ba Buttons
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Ba Buttons. Kliknite na "Pridať Ba Button" pre pridanie prvého ba button.
+          ba_button:
+            view_live_html: Zobraziť náhľad ba button<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť ba button
+            delete: Zmazať ba button
+      ba_buttons:
+        show:
+          other: Daľšie Ba Buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

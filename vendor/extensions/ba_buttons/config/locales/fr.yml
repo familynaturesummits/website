@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      ba_buttons:
+        title: Ba Buttons
+    ba_buttons:
+      admin:
+        ba_buttons:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Ba Button
+            reorder: Réordonner les Ba Buttons
+            reorder_done: Fin de réordonnancement des Ba Buttons
+          records:
+            title: Ba Buttons
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Ba Button. Cliquer sur "Créer un(e) nouve(au/l/lle) Ba Button" pour créer votre premi(er/ère) ba button.'
+          ba_button:
+            view_live_html: Voir ce(t/tte) ba button <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) ba button
+            delete: Supprimer définitivement ce(t/tte) ba button
+      ba_buttons:
+        show:
+          other: Autres Ba Buttons
+  activerecord:
+    attributes:
+      'refinery/ba_buttons/ba_button':
+        title: Title
+        url: Url
+        color: Color

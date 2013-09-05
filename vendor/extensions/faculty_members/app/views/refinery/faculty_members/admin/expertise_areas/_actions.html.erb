@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::FacultyMembers::Admin::ExpertiseAreasController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.faculty_members_admin_expertise_areas_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_faculty_members_admin_expertise_area_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::FacultyMembers::Admin::ExpertiseAreasController.sortable? && ::Refinery::FacultyMembers::ExpertiseArea.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Expertise Areas"),
+                 refinery.faculty_members_admin_expertise_areas_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Expertise Areas"),
+                 refinery.faculty_members_admin_expertise_areas_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

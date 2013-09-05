@@ -1,0 +1,18 @@
+<%= content_tag :h3, "Search Faculty" %>
+
+<%= form_tag refinery.faculty_members_faculty_members_path, :method => 'get', :class => 'form' do %>
+
+    <%= label_tag :area_of_expertise, "Subject matter/program" %>
+    <%= select_tag :area_of_expertise, options_for_select(::Refinery::FacultyMembers::ExpertiseArea.order(:name).collect{ |s| [s.name, s.id] }, :selected => params[:area_of_expertise]), :prompt => "-- select area of expertise --" %>
+    
+    <%= label_tag :year %>
+    <%= select_tag :year, options_for_select((1970..Date.today.strftime('%Y').to_i).collect{ |s| [s] }, :selected => year), :prompt => "-- select year --" %>
+
+    <%= label_tag :first_name %>
+    <%= text_field_tag :first_name, params[:first_name] %>
+    
+    <%= label_tag :last_name %>
+    <%= text_field_tag :last_name, params[:last_name] %>
+    
+<%= submit_tag "search", :class => "btn" %>
+<% end %>

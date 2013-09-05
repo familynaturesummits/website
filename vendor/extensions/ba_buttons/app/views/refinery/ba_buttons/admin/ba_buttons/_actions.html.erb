@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::BaButtons::Admin::BaButtonsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.ba_buttons_admin_ba_buttons_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_ba_buttons_admin_ba_button_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::BaButtons::Admin::BaButtonsController.sortable? && ::Refinery::BaButtons::BaButton.any? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Ba Buttons"),
+                 refinery.ba_buttons_admin_ba_buttons_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Ba Buttons"),
+                 refinery.ba_buttons_admin_ba_buttons_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>
